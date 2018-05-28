@@ -3,6 +3,8 @@
     
 <%
 
+	//Teste de recuperação de valores via request
+
 	String email = request.getParameter("txtEmail");
 	String senha = request.getParameter("txtSenha");
 	String frase = (String) request.getAttribute("frase");
