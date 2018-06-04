@@ -9,7 +9,7 @@
 	String senha = request.getParameter("txtSenha");
 	String frase = (String) request.getAttribute("frase");
 	
-	int soma = (int) request.getAttribute("v1") + (int) request.getAttribute("v2");
+	
 
 %>    
     
@@ -19,6 +19,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Resposta da Servlet</title>
+<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,7 +27,6 @@
 	<h3>E-mail: <%= email %></h3>
 	<h3>Senha: <%= senha %></h3>
 	<h3>A frase é: <%= frase %></h3>
-	<h3>A soma é: <%= soma %></h3>
 
 </body>
 </html>

@@ -3,20 +3,49 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
-	<form method="post" action="Autentica">
-		<label>Nome:</label>
-		<input type="email" name="txtEmail" required="required">
-		<label>Senha:</label>
-		<input type="password" name="txtSenha" required="required">
-		<input type="submit" value="Login">
-	</form>
+	<header>
+		<div class="navbar navbar-inverse">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 style="color: #ffffff">UaiContatos</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="container">
+		<div class="row">
+		<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="well">
+					<form method="post" action="Autentica">
+						<div class="form-group">
+							<img src="imagens/user64.png" />
+						</div>
+						<div class="form-group">
+							<label>E-mail:</label>
+							<input class="form-control" type="email" name="txtEmail" required="required">
+						</div>
+						<div class="form-group">
+							<label>Senha:</label>
+							<input class="form-control" type="password" name="txtSenha" required="required">
+						</div>
+						<div class="form-group">
+							<input class="btn btn-success" type="submit" value="Login">
+						</div>
+						<p>Não tem cadastro? Cadastre-se <a href="#">aqui</a></p>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
 	
-	<p>
-		<a href="Autentica?x=10&y=25&nome=Celso">Teste</a>
-	</p>
 
 </body>
 </html>
