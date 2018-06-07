@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastrar novo usuário</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="navbar navbar-default">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 style="color: black">UaiContatos</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						
+							<h3>Vamos efetuar o seu cadastro</h3>
+
+					</div>
+					<div class="panel-body">
+					
+						<!-- FORMULÁRIO DE CADASTRO -->
+						<form method="post" action="GravarUsuario">
+							<fieldSet>
+								<legend>Dados Gerais:</legend>
+								<!-- LINHA 1 DO FORMULÁRIO -->
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="txtNome">Nome:</label>
+										<input type="text" name="txtNome" class="form-control" />
+									</div>
+									<div class="form-group col-md-3">
+										<label for="txtCidade">Cidade:</label>
+										<input type="text" name="txtCidade" class="form-control" />
+									</div>
+									<div class="form-group col-md-3">
+										<label for="txtDtNasc">Dt. Nasc.:</label>
+										<input type="date" name="txtDtNasc" class="form-control" />
+									</div>
+								</div>
+							</fieldSet>	
+							
+							<!-- LINHA 02 DO FORMULÁRIO -->			
+							<fieldset>
+								<legend>Dados para autenticação:</legend>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="txtEmail">E-mail:</label>
+										<input type="email" name="txtEmail" class="form-control" />
+									</div>
+									<div class="form-group col-md-3">
+										<label for="txtSenha">Senha:</label>
+										<input type="password" name="txtSenha" class="form-control" />
+									</div>
+									<div class="form-group col-md-3">
+										<label for="txtConfSenha">Conf. Senha:</label>
+										<input type="password" name="txtConfSenha" class="form-control" />
+									</div>
+								</div>
+							</fieldset>	
+							<hr>
+							<div class="form-row">
+								<div class="col-md-12">
+									<input type="submit" value="Criar usuário" class="btn btn-success" />
+									<input type="reset" value="Limpar formulário" class="btn btn-warning" />
+									<a href="login.html" class="btn btn-danger">Cancelar</a>
+								</div>
+							</div>	
+						</form>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
