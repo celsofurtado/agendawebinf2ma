@@ -17,7 +17,8 @@
 		response.sendRedirect("login.html");
 	} else {
 		ContatoDao c = new ContatoDao();
-		listaContatos = c.getContatos(u.getId());
+		Contato contato = new Contato();
+		contato = c.getContato(Integer.parseInt(request.getParameter("id")));
 %>
 		<!DOCTYPE html>
 		<html>
@@ -66,8 +67,8 @@
 					
 					</div>
 					<div class="col-md-9">
-						<div class="panel panel-primary">
-  						<div class="panel-heading"><strong><img src="imagens/users48.png" height="24px" width="24px" style="margin-right:10px;">Cadastrar contato:</strong></div>
+						<div class="panel panel-warning">
+  						<div class="panel-heading"><strong><img src="imagens/users48.png" height="24px" width="24px" style="margin-right:10px;">Editar contato:</strong></div>
   						<div class="panel-body">
     						<!-- FORMULÁRIO DE CADASTRO DE CONTATOS -->
     						<form method="GET" action="GravarContato" >
@@ -78,18 +79,18 @@
     									<div class="form-group col-md-6">
     										<input type="hidden" name="txtIdUsuario" value="<%= u.getId() %>" >
     										<label for="txtNome">Nome:</label>
-    										<input type="text" name="txtNome" class="form-control">
+    										<input type="text" name="txtNome" value="<%= contato.getNome() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-3">
     										<label for="txtDtNasc">Dt. Nasc.:</label>
-    										<input type="date" name="txtDtNasc" class="form-control">
+    										<input type="date" name="txtDtNasc" value="<%= contato.getDtNasc() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-3">
     										<label for="cbSexo">Sexo:</label>
     										<select name="cbSexo" class="form-control">
-    											<option value="s">Selecione</option>
-    											<option value="f">Feminino</option>
-    											<option value="m">Masculino</option>
+    											<option value="s" <%= contato.getSexo().equals("s")?"selected":"" %>>Selecione</option>
+    											<option value="f" <%= contato.getSexo().equals("f")?"selected":"" %>>Feminino</option>
+    											<option value="m" <%= contato.getSexo().equals("m")?"selected":"" %>>Masculino</option>
     										</select>
     									</div>
     								
@@ -101,15 +102,15 @@
     								<div class="form-row">
     									<div class="form-group col-md-6">
     										<label for="txtEmail">E-mail:</label>
-    										<input type="mail" name="txtEmail" class="form-control">
+    										<input type="mail" name="txtEmail" value="<%= contato.getEmail() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-3">
     										<label for="txtTelefone">Telefone:</label>
-    										<input type="text" name="txtTelefone" class="form-control">
+    										<input type="text" name="txtTelefone" value="<%= contato.getTelefone() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-3">
     										<label for="txtCelular">Celular:</label>
-    										<input type="text" name="txtCelular" class="form-control">
+    										<input type="text" name="txtCelular" value="<%= contato.getCelular() %>" class="form-control">
     									</div>
     								
     								</div>
@@ -120,25 +121,25 @@
     								<div class="form-row">
     									<div class="form-group col-md-8">
     										<label for="txtLogradouro">Logradouro:</label>
-    										<input type="text" name="txtLogradouro" class="form-control">
+    										<input type="text" name="txtLogradouro" value="<%= contato.getLogradouro() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-4">
     										<label for="txtBairro">Bairro:</label>
-    										<input type="text" name="txtTelefone" class="form-control">
+    										<input type="text" name="txtBairro" value="<%= contato.getBairro() %>" class="form-control">
     									</div>    								
     								</div>
     								<div class="form-row">
     									<div class="form-group col-md-6">
     										<label for="txtCidade">Cidade:</label>
-    										<input type="text" name="txtCidade" class="form-control">
+    										<input type="text" name="txtCidade" value="<%= contato.getCidade() %>" class="form-control">
     									</div>
     									<div class="form-group col-md-3">
     										<label for="txtEstado">Estado:</label>
-    										<input type="text" name="txtEstado" class="form-control">
+    										<input type="text" name="txtEstado" value="<%= contato.getEstado() %>" class="form-control">
     									</div>  
     									<div class="form-group col-md-3">
     										<label for="txtCep">CEP:</label>
-    										<input type="text" name="txtCep" class="form-control">
+    										<input type="text" name="txtCep" value="<%= contato.getCep() %>" class="form-control">
     									</div>   								
     								</div>
     							</fieldset>
